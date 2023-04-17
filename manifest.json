@@ -1,0 +1,31 @@
+{
+    "name": "May AI: A Personalized ChatGPT Extension",
+    "version": "1.0",
+    "author": "Shubham Lohar",
+    "description": "A Personalized ChatBot with powered-by ChatGPT. Type '/may {question}' in any text field to get a response from ChatGPT",
+    "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "runAt": "document_end",
+          "js": ["content.js"],
+          "all_frames": true
+        }
+    ],
+    "action": {
+        "default_title": "May AI: A ChatBOT",
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "ai.png",
+        "48": "ai.png",
+        "128": "ai.png"
+    }
+}
